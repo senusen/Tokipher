@@ -1,0 +1,43 @@
+{
+  "name": "tokipher",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Spotify token server + YouTube signature cipher server for Lavalink, in one process.",
+  "license": "MIT",
+  "author": "senusen",
+  "homepage": "https://github.com/senusen/Tokipher#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senusen/Tokipher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/senusen/Tokipher/issues"
+  },
+  "keywords": [
+    "lavalink",
+    "lavasrc",
+    "youtube-source",
+    "spotify",
+    "youtube",
+    "yt-cipher",
+    "spotify-tokener"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "start": "node src/server.ts",
+    "update-ejs": "node scripts/update-ejs.ts",
+    "typecheck": "tsc -p ."
+  },
+  "dependencies": {
+    "astring": "1.9.0",
+    "meriyah": "6.1.4",
+    "puppeteer-core": "^25.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}

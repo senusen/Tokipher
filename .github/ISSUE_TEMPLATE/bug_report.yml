@@ -1,0 +1,51 @@
+name: Bug report
+description: Something doesn't work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before posting logs or config, **remove your `sp_dc` cookie, `PASSWORD` and any access tokens.**
+        For security problems, don't open an issue. See SECURITY.md.
+  - type: dropdown
+    id: part
+    attributes:
+      label: Which part?
+      options:
+        - Spotify tokener (/api/token)
+        - YouTube cipher (/get_sts, /resolve_url, /decrypt_signature)
+        - Docker image / setup
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: For cipher bugs, include the `player_url` from the failing request.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Tokipher logs
+      description: Run with `LOG_LEVEL=debug` if you can. Remove secrets first.
+      render: text
+  - type: input
+    id: version
+    attributes:
+      label: Tokipher version
+      description: Commit, image tag, or the `ejs` value from `GET /health`.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: How you run it, OS, Node.js version or Docker, and the Lavalink / plugin versions.
+      placeholder: "Docker on Ubuntu, Lavalink 4.x.x, youtube-source 1.x.x, LavaSrc 4.x.x"

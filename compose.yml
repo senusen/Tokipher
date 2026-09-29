@@ -1,0 +1,19 @@
+services:
+  tokipher:
+    image: ghcr.io/senusen/tokipher:latest
+    # To build the image from this repository instead, replace `image:` with:
+    # build: .
+    restart: unless-stopped
+    shm_size: 256mb
+    ports:
+      # Reachable from this host only. If Lavalink runs in the same compose project,
+      # you can remove `ports:` and use http://tokipher:8001/ instead.
+      - "127.0.0.1:8001:8001"
+    environment:
+      PASSWORD: change-me
+      SPOTIFY_SP_DC: ""
+    volumes:
+      - cache:/app/cache
+
+volumes:
+  cache:
